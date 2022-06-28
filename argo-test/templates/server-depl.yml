@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: server-deployment
 spec:
-  replicas: { { .Values.replicaCount } }
+  replicas: { { $.Values.replicaCount } }
   selector:
     matchLabels:
       component: server
