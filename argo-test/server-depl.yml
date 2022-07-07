@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: rohin21/multi-server
+          image: rohin21/multi-server:latest
           ports:
             - containerPort: 5000
           env:
