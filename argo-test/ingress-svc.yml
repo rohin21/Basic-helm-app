@@ -29,3 +29,10 @@ spec:
                 name: server-cluster-ip-service
                 port:
                   number: 5000
+          - path: /argocd/?(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: svc/argocd-server
+                port:
+                  number: 30311
