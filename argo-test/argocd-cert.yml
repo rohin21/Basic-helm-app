@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   dnsNames:
-    - rohin-dev.in
+    - argocd.rohin-dev.in
   secretName: argocd-app-tls
   issuerRef:
     name: letsencrypt-cluster-issuer

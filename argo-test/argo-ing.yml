@@ -8,18 +8,16 @@ metadata:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
     # If you encounter a redirect loop or are getting a 307 response code
     # then you need to force the nginx ingress to connect to the backend using HTTPS.
     #
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
 spec:
   rules:
-  - host: rohin-dev.in
+  - host: argocd.rohin-dev.in
     http:
       paths:
-      - path: /argocd?(.*)
+      - path: /
         pathType: Prefix
         backend:
           service:
@@ -28,5 +26,5 @@ spec:
               name: https
   tls:
   - hosts:
-    - rohin-dev.in
+    - argocd.rohin-dev.in
     secretName: argocd-app-tls # do not change, this is provided by Argo CD
